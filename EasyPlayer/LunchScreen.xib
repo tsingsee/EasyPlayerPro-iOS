@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EasyPlayer_lunch" translatesAutoresizingMaskIntoConstraints="NO" id="Cde-UG-hsX">
+                    <rect key="frame" x="97" y="203" width="180" height="180"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" id="CYg-2W-WUQ"/>
+                        <constraint firstAttribute="width" constant="180" id="uyw-r5-fPF"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v1.1.18.0120" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvl-2V-u1Q">
+                    <rect key="frame" x="112" y="403" width="150" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="Jd0-7o-5Gr"/>
+                        <constraint firstAttribute="height" constant="17" id="tnM-ip-4kM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2012-2018 www.EasyDarwin.org" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEX-Xt-DRH">
+                    <rect key="frame" x="31" y="640" width="313" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="313" id="Q1e-vz-qpz"/>
+                        <constraint firstAttribute="width" constant="313" id="gF1-l6-mn3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wvl-2V-u1Q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AYM-v4-zfl"/>
+                <constraint firstAttribute="bottom" secondItem="kEX-Xt-DRH" secondAttribute="bottom" constant="10" id="Dgl-eh-jQ4"/>
+                <constraint firstItem="Cde-UG-hsX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LXK-aM-tVk"/>
+                <constraint firstItem="kEX-Xt-DRH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lta-1V-4Gv"/>
+                <constraint firstItem="Cde-UG-hsX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-40" id="f6v-L0-AaY"/>
+                <constraint firstItem="wvl-2V-u1Q" firstAttribute="top" secondItem="Cde-UG-hsX" secondAttribute="bottom" constant="20" id="yQ3-MH-DK3"/>
+            </constraints>
+            <point key="canvasLocation" x="32" y="88"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="EasyPlayer_lunch" width="200" height="200"/>
+    </resources>
+</document>
