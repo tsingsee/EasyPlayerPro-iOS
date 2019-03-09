@@ -11,7 +11,6 @@
 PlayViewController *pvc = nil;
 
 @interface PlayViewController()<UIAlertViewDelegate> {
-    MBProgressHUD *startHUD;
     
     NSTimer* _toolbarTimer;
     NSTimer *_fpsTimer;
@@ -21,6 +20,7 @@ PlayViewController *pvc = nil;
     BOOL _isMediaSliderBeingDragged;
 }
 
+@property (nonatomic, strong) MBProgressHUD *startHUD;
 @property (nonatomic, strong) UIButton *backBtn;
 @property (nonatomic, strong) UIView *bottomView;
 @property (nonatomic, strong) UIView *titleView;
@@ -39,14 +39,14 @@ PlayViewController *pvc = nil;
     self.view.backgroundColor = [UIColor blackColor];
     self.title = @"视频播放";
     
-    startHUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-    startHUD.label.text = @"0Kb/s";
-    startHUD.bezelView.color = [UIColor clearColor];
-    startHUD.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    startHUD.userInteractionEnabled = NO;
-    startHUD.backgroundView.color = [UIColor colorWithWhite:0.f alpha:.4f];
-    startHUD.contentColor = [UIColor whiteColor];
-    startHUD.label.font = [UIFont systemFontOfSize:13];
+    self.startHUD = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    self.startHUD.label.text = @"0Kb/s";
+    self.startHUD.bezelView.color = [UIColor clearColor];
+    self.startHUD.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+    self.startHUD.userInteractionEnabled = NO;
+    self.startHUD.backgroundView.color = [UIColor colorWithWhite:0.f alpha:.4f];
+    self.startHUD.contentColor = [UIColor whiteColor];
+    self.startHUD.label.font = [UIFont systemFontOfSize:13];
     
 #ifdef DEBUG
     [IJKFFMoviePlayerController setLogReport:YES];
@@ -238,7 +238,7 @@ PlayViewController *pvc = nil;
     [super viewWillDisappear:animated];
     
     [self stopSpeedTime];
-    [startHUD hideAnimated:YES];
+    [self.startHUD hideAnimated:YES];
     if (_toolbarTimer) {
         [_toolbarTimer invalidate];
         _toolbarTimer = nil;
@@ -293,7 +293,7 @@ PlayViewController *pvc = nil;
     IJKMPMovieLoadState loadState = _player.loadState;
     if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
         NSLog(@"loadStateDidChange: IJKMPMovieLoadStatePlaythroughOK: %d\n", (int)loadState);
-        [startHUD hideAnimated:YES];
+        [self.startHUD hideAnimated:YES];
     } else if ((loadState & IJKMPMovieLoadStateStalled) != 0) {
         NSLog(@"loadStateDidChange: IJKMPMovieLoadStateStalled: %d\n", (int)loadState);
 //        [self.player stop];
@@ -317,21 +317,21 @@ PlayViewController *pvc = nil;
         case IJKMPMovieFinishReasonPlaybackEnded:
             NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackEnded: %d\n", reason);
             [self stopSpeedTime];
-            [startHUD hideAnimated:YES];
+            [self.startHUD hideAnimated:YES];
             break;
         case IJKMPMovieFinishReasonUserExited:
             NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonUserExited: %d\n", reason);
             [self stopSpeedTime];
-            [startHUD hideAnimated:YES];
+            [self.startHUD hideAnimated:YES];
             break;
         case IJKMPMovieFinishReasonPlaybackError:
             NSLog(@"playbackStateDidChange: IJKMPMovieFinishReasonPlaybackError: %d\n", reason);
             [self stopSpeedTime];
-            startHUD.bezelView.color = [UIColor whiteColor];
-            startHUD.label.font = [UIFont systemFontOfSize:16];
-            startHUD.contentColor = [UIColor darkGrayColor];
-            startHUD.label.text = @"视频无法播放";
-            startHUD.mode = MBProgressHUDModeText;
+            self.startHUD.bezelView.color = [UIColor whiteColor];
+            self.startHUD.label.font = [UIFont systemFontOfSize:16];
+            self.startHUD.contentColor = [UIColor darkGrayColor];
+            self.startHUD.label.text = @"视频无法播放";
+            self.startHUD.mode = MBProgressHUDModeText;
             break;
         default:
             NSLog(@"playbackPlayBackDidFinish: ???: %d\n", reason);
@@ -408,38 +408,38 @@ PlayViewController *pvc = nil;
             self.bottomView.frame = CGRectMake(0, ScreenWidth - TOOLBAR_HEIGHT - 80, ScreenHeight, TOOLBAR_HEIGHT + 80);
             self.bottomView.backgroundColor = [UIColor darkGrayColor];
             
-            _titleView.frame = CGRectMake(0, 0, ScreenHeight - TOOLBAR_HEIGHT, TOOLBAR_HEIGHT + 80);
-            _mediaProgressSlider.frame = CGRectMake(122.0, 93, _titleView.frame.size.width - 170, 2.0);
+            self.titleView.frame = CGRectMake(0, 0, ScreenHeight - TOOLBAR_HEIGHT, TOOLBAR_HEIGHT + 80);
+            self.mediaProgressSlider.frame = CGRectMake(122.0, 93, self.titleView.frame.size.width - 170, 2.0);
             
-            UIButton *slowBtn = (UIButton *)[_titleView viewWithTag:2001];
-            slowBtn.frame = CGRectMake(_titleView.frame.size.width - 80, 0, 40, 30);
-            UIButton *fastBtn = (UIButton *)[_titleView viewWithTag:2002];
-            fastBtn.frame = CGRectMake(_titleView.frame.size.width - 40, 0, 40, 30);
-            UIButton *forwardBtn = (UIButton *)[_titleView viewWithTag:9001];
-            forwardBtn.frame = CGRectMake(_titleView.frame.size.width/2 - 58, 0, 32, 32);
-            UIButton *playAndStopBtn = (UIButton *)[_titleView viewWithTag:9002];
-            playAndStopBtn.frame = CGRectMake(_titleView.frame.size.width/2 - 16, 0, 32, 32);
-            UIButton *nextBtn = (UIButton *)[_titleView viewWithTag:9003];
-            nextBtn.frame = CGRectMake(_titleView.frame.size.width/2 + 58, 0, 32, 32);
-            UILabel *totalLabel = (UILabel *)[_titleView viewWithTag:1002];
-            totalLabel.frame = CGRectMake(_titleView.frame.size.width - 40, 84, 40, 21.0);
-            UILabel *spendLabel = (UILabel *)[_titleView viewWithTag:1001];
+            UIButton *slowBtn = (UIButton *)[self.titleView viewWithTag:2001];
+            slowBtn.frame = CGRectMake(self.titleView.frame.size.width - 80, 0, 40, 30);
+            UIButton *fastBtn = (UIButton *)[self.titleView viewWithTag:2002];
+            fastBtn.frame = CGRectMake(self.titleView.frame.size.width - 40, 0, 40, 30);
+            UIButton *forwardBtn = (UIButton *)[self.titleView viewWithTag:9001];
+            forwardBtn.frame = CGRectMake(self.titleView.frame.size.width/2 - 58, 0, 32, 32);
+            UIButton *playAndStopBtn = (UIButton *)[self.titleView viewWithTag:9002];
+            playAndStopBtn.frame = CGRectMake(self.titleView.frame.size.width/2 - 16, 0, 32, 32);
+            UIButton *nextBtn = (UIButton *)[self.titleView viewWithTag:9003];
+            nextBtn.frame = CGRectMake(self.titleView.frame.size.width/2 + 58, 0, 32, 32);
+            UILabel *totalLabel = (UILabel *)[self.titleView viewWithTag:1002];
+            totalLabel.frame = CGRectMake(self.titleView.frame.size.width - 40, 84, 40, 21.0);
+            UILabel *spendLabel = (UILabel *)[self.titleView viewWithTag:1001];
             spendLabel.frame = CGRectMake(80, 84, 40, 21.0);
             
-            UIButton *recordBtn = (UIButton *)[_titleView viewWithTag:6001];
+            UIButton *recordBtn = (UIButton *)[self.titleView viewWithTag:6001];
             recordBtn.frame = CGRectMake(80, 40.0, 32.0, 32.0);
-            UIButton *screenShotBtn = (UIButton *)[_titleView viewWithTag:6002];
+            UIButton *screenShotBtn = (UIButton *)[self.titleView viewWithTag:6002];
             screenShotBtn.frame = CGRectMake(160, 40.0, 32.0, 32.0);
-            UIButton *scaleBtn =(UIButton *)[_titleView viewWithTag:6003];
+            UIButton *scaleBtn =(UIButton *)[self.titleView viewWithTag:6003];
             scaleBtn.frame = CGRectMake(240, 40.0, 32.0, 32.0);
             
-            UILabel *fpsLabel = (UILabel *)[_titleView viewWithTag:4001];
+            UILabel *fpsLabel = (UILabel *)[self.titleView viewWithTag:4001];
             fpsLabel.frame = CGRectMake(320, 46.0, 70.0, 21.0);
             
-            UILabel *speedLabel = (UILabel *)[_titleView viewWithTag:4002];
+            UILabel *speedLabel = (UILabel *)[self.titleView viewWithTag:4002];
             speedLabel.frame = CGRectMake(400, 46.0, 70.0, 21.0);
             
-            startHUD.transform = CGAffineTransformMakeRotation(M_PI_2);
+            self.startHUD.transform = CGAffineTransformMakeRotation(M_PI_2);
             
             self.fullBtn.selected = YES;
             self.fullBtn.frame = CGRectMake(ScreenHeight- TOOLBAR_HEIGHT, 0, TOOLBAR_HEIGHT, TOOLBAR_HEIGHT);
@@ -453,38 +453,38 @@ PlayViewController *pvc = nil;
             self.bottomView.frame = CGRectMake(0, ScreenHeight - TOOLBAR_HEIGHT - 80, ScreenWidth, TOOLBAR_HEIGHT + 80);
             self.bottomView.backgroundColor = [UIColor darkGrayColor];
             
-            startHUD.transform = CGAffineTransformIdentity;
+            self.startHUD.transform = CGAffineTransformIdentity;
             
-            _titleView.frame = CGRectMake(0, 0, ScreenWidth - TOOLBAR_HEIGHT, TOOLBAR_HEIGHT + 80);
-            UIButton *slowBtn = (UIButton *)[_titleView viewWithTag:2001];
-            slowBtn.frame = CGRectMake(_titleView.frame.size.width/2 + 40, 0, 40, 30);
+            self.titleView.frame = CGRectMake(0, 0, ScreenWidth - TOOLBAR_HEIGHT, TOOLBAR_HEIGHT + 80);
+            UIButton *slowBtn = (UIButton *)[self.titleView viewWithTag:2001];
+            slowBtn.frame = CGRectMake(self.titleView.frame.size.width/2 + 40, 0, 40, 30);
             
-            UIButton *fastBtn = (UIButton *)[_titleView viewWithTag:2002];
-            fastBtn.frame = CGRectMake(_titleView.frame.size.width/2 +100, 0, 40, 30);
-            _mediaProgressSlider.frame = CGRectMake(62.0, 93, _titleView.frame.size.width - 110, 2.0);
-            UIButton *forwardBtn = (UIButton *)[_titleView viewWithTag:9001];
+            UIButton *fastBtn = (UIButton *)[self.titleView viewWithTag:2002];
+            fastBtn.frame = CGRectMake(self.titleView.frame.size.width/2 +100, 0, 40, 30);
+            self.mediaProgressSlider.frame = CGRectMake(62.0, 93, self.titleView.frame.size.width - 110, 2.0);
+            UIButton *forwardBtn = (UIButton *)[self.titleView viewWithTag:9001];
             forwardBtn.frame = CGRectMake(20.0, 0, 32, 32);
-            UIButton *playAndStopBtn = (UIButton *)[_titleView viewWithTag:9002];
+            UIButton *playAndStopBtn = (UIButton *)[self.titleView viewWithTag:9002];
             playAndStopBtn.frame = CGRectMake(62.0, 0, 32, 32);
-            UIButton *nextBtn = (UIButton *)[_titleView viewWithTag:9003];
+            UIButton *nextBtn = (UIButton *)[self.titleView viewWithTag:9003];
             nextBtn.frame = CGRectMake(104.0, 0, 32, 32);
-            UILabel *totalLabel = (UILabel *)[_titleView viewWithTag:1002];
-            totalLabel.frame = CGRectMake(_titleView.frame.size.width - 40, 84, 40, 21.0);
-            UILabel *spendLabel = (UILabel *)[_titleView viewWithTag:1001];
+            UILabel *totalLabel = (UILabel *)[self.titleView viewWithTag:1002];
+            totalLabel.frame = CGRectMake(self.titleView.frame.size.width - 40, 84, 40, 21.0);
+            UILabel *spendLabel = (UILabel *)[self.titleView viewWithTag:1001];
             spendLabel.frame = CGRectMake(20, 84, 40, 21.0);
             
-            UIButton *recordBtn = (UIButton *)[_titleView viewWithTag:6001];
+            UIButton *recordBtn = (UIButton *)[self.titleView viewWithTag:6001];
             recordBtn.frame = CGRectMake(20, 40.0, 32.0, 32.0);
-            UIButton *screenShotBtn = (UIButton *)[_titleView viewWithTag:6002];
+            UIButton *screenShotBtn = (UIButton *)[self.titleView viewWithTag:6002];
             screenShotBtn.frame = CGRectMake(55, 40.0, 32.0, 32.0);
-            UIButton *scaleBtn =(UIButton *)[_titleView viewWithTag:6003];
+            UIButton *scaleBtn =(UIButton *)[self.titleView viewWithTag:6003];
             scaleBtn.frame = CGRectMake(92, 40.0, 32.0, 32.0);
             
-            UILabel *fpsLabel = (UILabel *)[_titleView viewWithTag:4001];
+            UILabel *fpsLabel = (UILabel *)[self.titleView viewWithTag:4001];
             fpsLabel.frame = CGRectMake(130, 46.0, 70.0, 21.0);
             
-            UILabel *speedLabel = (UILabel *)[_titleView viewWithTag:4002];
-            speedLabel.frame = CGRectMake(_titleView.frame.size.width - 70, 46.0, 70.0, 21.0);
+            UILabel *speedLabel = (UILabel *)[self.titleView viewWithTag:4002];
+            speedLabel.frame = CGRectMake(self.titleView.frame.size.width - 70, 46.0, 70.0, 21.0);
             
             self.fullBtn.selected = NO;
             self.fullBtn.frame = CGRectMake(ScreenWidth - TOOLBAR_HEIGHT, 0, TOOLBAR_HEIGHT, TOOLBAR_HEIGHT);

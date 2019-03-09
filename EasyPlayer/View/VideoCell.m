@@ -45,14 +45,14 @@
     self.titleLabel.frame = CGRectMake(0,self.contentView.frame.size.height-VIDEO_TITLE_HEIGHT, self.contentView.frame.size.width, VIDEO_TITLE_HEIGHT);
 }
 
-// Check if the "thing" pass'd is empty
-static inline BOOL isEmpty(id thing) {
-    return thing == nil
-    || [thing isKindOfClass:[NSNull class]]
-    || ([thing respondsToSelector:@selector(length)]
-        && [(NSData *)thing length] == 0)
-    || ([thing respondsToSelector:@selector(count)]
-        && [(NSArray *)thing count] == 0);
-}
+//// Check if the "thing" pass'd is empty
+//static inline BOOL isEmpty(id thing) {
+//    return thing == nil
+//    || [thing isKindOfClass:[NSNull class]]
+//    || ([thing respondsToSelector:@selector(length)]
+//        && [(NSData *)thing length] == 0)
+//    || ([thing respondsToSelector:@selector(count)]
+//        && [(NSArray *)thing count] == 0);
+//}
 
 @end

@@ -19,8 +19,9 @@
     UICollectionViewFlowLayout *layout;
     
     NSInteger currentPage;
-    NSArray *videoSquareArray;
 }
+
+@property (nonatomic, strong) NSArray *videoSquareArray;;
 
 @end
 
@@ -149,7 +150,7 @@
         NSDictionary *headerDic =  [easyDic objectForKey:@"Header"];
         NSDictionary *bodyDic =  [easyDic objectForKey:@"Body"];
         if ([[headerDic objectForKey:@"ErrorNum"] isEqualToString:@"200"]) {
-            videoSquareArray = bodyDic[@"Lives"];
+            self.videoSquareArray = bodyDic[@"Lives"];
             [weakSelf.collectionView reloadData];
         } else {
             MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -297,7 +298,7 @@
     if (currentPage == 1) {
         return _dataArray.count;
     } else {
-        return videoSquareArray.count;
+        return self.videoSquareArray.count;
     }
 }
 
@@ -316,7 +317,7 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (currentPage == 0) {
         VideoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"VideoCellSquare" forIndexPath:indexPath];
-        NSDictionary *dict = videoSquareArray[indexPath.row];
+        NSDictionary *dict = self.videoSquareArray[indexPath.row];
         [cell.imageView sd_setImageWithURL:[NSURL URLWithString:dict[@"SnapURL"]]];
         cell.titleLabel.text = [NSString stringWithFormat:@"  %@",dict[@"Name"]];
         return cell;
@@ -372,7 +373,7 @@
         pvc.imagePath = [_dir stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.png",strMd5]];
         pvc.isVideoSquare = NO;
     } else {
-        NSDictionary *dict = videoSquareArray[indexPath.row];
+        NSDictionary *dict = self.videoSquareArray[indexPath.row];
         pvc.urlStr = dict[@"PlayUrl"];
         pvc.isVideoSquare = YES;
     }
