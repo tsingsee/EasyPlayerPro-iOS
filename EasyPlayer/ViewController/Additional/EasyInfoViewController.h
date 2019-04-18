@@ -14,5 +14,6 @@
 @interface EasyInfoViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UIImageView *iOSEasyRTSPImage;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 
 @end

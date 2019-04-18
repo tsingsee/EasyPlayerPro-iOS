@@ -190,7 +190,16 @@
     [view addSubview:label];
     
     UIButton *infoBtn = [[UIButton alloc] initWithFrame:CGRectMake(ScreenWidth - (10 + size) * 1, y, size, size)];
-    [infoBtn setBackgroundImage:[UIImage imageNamed:@"info"] forState:UIControlStateNormal];
+    
+    NSInteger activeDays = [[NSUserDefaults standardUserDefaults] integerForKey:@"activeDays"];
+    if (activeDays >= 9999){
+        [infoBtn setBackgroundImage:[UIImage imageNamed:@"ic_action_about_green"] forState:UIControlStateNormal];
+    } else if (activeDays > 0) {
+        [infoBtn setBackgroundImage:[UIImage imageNamed:@"ic_action_about_yellow"] forState:UIControlStateNormal];
+    } else {
+        [infoBtn setBackgroundImage:[UIImage imageNamed:@"ic_action_about_red"] forState:UIControlStateNormal];
+    }
+    
     [infoBtn addTarget:self action:@selector(infoView) forControlEvents:UIControlEventTouchUpInside];
     [view addSubview:infoBtn];
     
@@ -227,7 +236,7 @@
 
 - (void)clickAddBtn {
     [_alertView textFieldAtIndex:0].placeholder = @"RTSP/RTMP/HTTP/HLS地址";
-    [_alertView textFieldAtIndex:0].text = @"rtmp://live.hkstv.hk.lxdns.com/live/hks";
+    [_alertView textFieldAtIndex:0].text = @"http://m4.pptvyun.com/pvod/e11a0/ijblO6coKRX6a8NEQgg8LDZcqPY/eyJkbCI6MTUxNjYyNTM3NSwiZXMiOjYwNDgwMCwiaWQiOiIwYTJkbnEtWG82S2VvcTZMNEsyZG9hZmhvNkNjbTY2WXB3IiwidiI6IjEuMCJ9/0a2dnq-Xo6Keoq6L4K2doafho6Ccm66Ypw.mp4";
     _alertView.tag = -1;
     [_alertView show];
 }

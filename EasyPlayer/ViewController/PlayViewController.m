@@ -84,13 +84,13 @@ PlayViewController *pvc = nil;
     }
     
     NSURL *url = [NSURL URLWithString:self.urlStr];
-    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options key:@"6468753866662B32734B77415A6E6C4E736F5A39652F4A4659584E35554778686557567955484A76567778576F4F4E373430566863336C4559584A33615735555A57467453584E55614756435A584E30514449774D54686C59584E35"];
+    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options key:@"6468647364762B32734B7941725370636F395652792F4A4659584E35554778686557567955484A76567778576F50394C2F69426C59584E35"];
     
     if (self.player) {
         self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.player.view.frame = self.view.bounds;
         self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
-        //    self.player.shouldAutoplay = YES;
+//            self.player.shouldAutoplay = YES;
         self.view.autoresizesSubviews = YES;
         [self.view addSubview:self.player.view];
     } else {

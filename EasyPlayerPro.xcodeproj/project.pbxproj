@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6626FEFF22671CE9008AC027 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6626FEFE22671CE9008AC027 /* QuartzCore.framework */; };
+		6626FF0122671CF6008AC027 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6626FF0022671CF6008AC027 /* MobileCoreServices.framework */; };
 		663498CE2171971C00DD64C0 /* ImageSource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663498CD2171971C00DD64C0 /* ImageSource.xcassets */; };
-		66C696C41FD9632600A4CE27 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66C696C31FD9632600A4CE27 /* IJKMediaFramework.framework */; };
+		6647DB292267727B007F188C /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6647DB282267727B007F188C /* IJKMediaFramework.framework */; };
 		66D2D779200639EE00FDE0C7 /* ScreenShotListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D2D777200639ED00FDE0C7 /* ScreenShotListCell.m */; };
 		66D2D77C20063A0700FDE0C7 /* ScreenShotListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D2D77A20063A0700FDE0C7 /* ScreenShotListViewController.m */; };
 		7600DCDD1D95768700D7FA09 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7600DCDC1D95768700D7FA09 /* MediaPlayer.framework */; };
@@ -55,9 +57,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6626FEFE22671CE9008AC027 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6626FF0022671CF6008AC027 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		663498CD2171971C00DD64C0 /* ImageSource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageSource.xcassets; sourceTree = "<group>"; };
+		6647DB282267727B007F188C /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = EasyPlayer/IJKMediaFramework.framework; sourceTree = "<group>"; };
 		66974DBE223389C70003125C /* libPods-EasyPlayerPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-EasyPlayerPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		66C696C31FD9632600A4CE27 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IJKMediaFramework.framework; path = EasyPlayer/IJKMediaFramework.framework; sourceTree = "<group>"; };
 		66D2D777200639ED00FDE0C7 /* ScreenShotListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShotListCell.m; sourceTree = "<group>"; };
 		66D2D778200639EE00FDE0C7 /* ScreenShotListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenShotListCell.h; sourceTree = "<group>"; };
 		66D2D77A20063A0700FDE0C7 /* ScreenShotListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenShotListViewController.m; sourceTree = "<group>"; };
@@ -127,26 +131,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6647DB292267727B007F188C /* IJKMediaFramework.framework in Frameworks */,
+				6626FF0122671CF6008AC027 /* MobileCoreServices.framework in Frameworks */,
+				6626FEFF22671CE9008AC027 /* QuartzCore.framework in Frameworks */,
 				7600DCFD1D9578C500D7FA09 /* libicucore.tbd in Frameworks */,
 				7600DCFB1D9578A700D7FA09 /* libbz2.tbd in Frameworks */,
 				7600DCF91D95789F00D7FA09 /* libz.tbd in Frameworks */,
 				96A10CD01CA58AD700BE3AD1 /* libiconv.tbd in Frameworks */,
 				96A10CCE1CA58ACB00BE3AD1 /* libstdc++.tbd in Frameworks */,
-				66C696C41FD9632600A4CE27 /* IJKMediaFramework.framework in Frameworks */,
+				7600DCDD1D95768700D7FA09 /* MediaPlayer.framework in Frameworks */,
 				7600DCF71D95771E00D7FA09 /* UIKit.framework in Frameworks */,
 				7600DCF51D95771400D7FA09 /* Foundation.framework in Frameworks */,
 				7600DCF31D95770500D7FA09 /* Security.framework in Frameworks */,
 				7600DCF11D9576FB00D7FA09 /* OpenGLES.framework in Frameworks */,
-				7600DCEF1D9576F000D7FA09 /* CoreGraphics.framework in Frameworks */,
 				7600DCED1D9576E400D7FA09 /* CoreTelephony.framework in Frameworks */,
 				7600DCEB1D9576D600D7FA09 /* CoreFoundation.framework in Frameworks */,
 				7600DCE91D9576CA00D7FA09 /* SystemConfiguration.framework in Frameworks */,
+				7600DCEF1D9576F000D7FA09 /* CoreGraphics.framework in Frameworks */,
 				7600DCE71D9576C000D7FA09 /* CoreMedia.framework in Frameworks */,
 				7600DCE51D9576B500D7FA09 /* CoreVideo.framework in Frameworks */,
 				7600DCE31D9576A800D7FA09 /* CoreLocation.framework in Frameworks */,
 				7600DCE11D95769E00D7FA09 /* VideoToolbox.framework in Frameworks */,
 				7600DCDF1D95769500D7FA09 /* AudioToolbox.framework in Frameworks */,
-				7600DCDD1D95768700D7FA09 /* MediaPlayer.framework in Frameworks */,
 				C458D31F1CAB7071004C34C7 /* AVFoundation.framework in Frameworks */,
 				EBE6BE4603EB6419BAB0EF91 /* libPods-EasyPlayerPro.a in Frameworks */,
 			);
@@ -225,7 +231,6 @@
 				7600DCF81D95789F00D7FA09 /* libz.tbd */,
 				96A10CCF1CA58AD700BE3AD1 /* libiconv.tbd */,
 				96A10CCD1CA58ACB00BE3AD1 /* libstdc++.tbd */,
-				66C696C31FD9632600A4CE27 /* IJKMediaFramework.framework */,
 				7600DCE01D95769E00D7FA09 /* VideoToolbox.framework */,
 				7600DCDE1D95769500D7FA09 /* AudioToolbox.framework */,
 				7600DCF61D95771E00D7FA09 /* UIKit.framework */,
@@ -258,6 +263,9 @@
 		9C44688C7DD779937ACE002F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6647DB282267727B007F188C /* IJKMediaFramework.framework */,
+				6626FF0022671CF6008AC027 /* MobileCoreServices.framework */,
+				6626FEFE22671CE9008AC027 /* QuartzCore.framework */,
 				66974DBE223389C70003125C /* libPods-EasyPlayerPro.a */,
 			);
 			name = Frameworks;
@@ -351,7 +359,7 @@
 		DAE85E8D1B733B2600062371 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = duowan;
 				TargetAttributes = {
 					DAE85E941B733B2600062371 = {
@@ -365,6 +373,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -465,6 +474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -521,6 +531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;

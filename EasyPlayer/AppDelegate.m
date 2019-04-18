@@ -2,6 +2,8 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 
+#import <IJKMediaFramework/IJKMediaFramework.h>
+
 @interface AppDelegate ()
 
 @end
@@ -33,6 +35,16 @@
     [nav.navigationItem.backBarButtonItem setTintColor:[UIColor whiteColor]];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
+    
+    // key有效时间
+    IJKFFOptions *options = [IJKFFOptions optionsByDefault];
+    NSURL *url = [NSURL URLWithString:@""];
+    IJKFFMoviePlayerController *player = [[IJKFFMoviePlayerController alloc] initWithContentURL:url withOptions:options key:@"6468647364762B32734B7941725370636F395652792F4A4659584E35554778686557567955484A76567778576F50394C2F69426C59584E35"];
+    int activeDays = [player activeDays];
+    NSLog(@"有效天数：%d", activeDays);
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:activeDays forKey:@"activeDays"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     return YES;
 }

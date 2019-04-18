@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EasyInfoViewController">
             <connections>
+                <outlet property="dayLabel" destination="qJ7-W1-oEd" id="hmb-Cj-WXD"/>
                 <outlet property="iOSEasyRTSPImage" destination="leB-Iq-P8U" id="1XL-kh-FB3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iAc-tq-NfJ"/>
             </connections>
@@ -24,19 +25,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1C-5i-oXb">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="681"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyPlayer Pro全功能播放器:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ7-W1-oEd">
-                                    <rect key="frame" x="20" y="8" width="335" height="31"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="31" id="ScX-wa-EIj"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EasyPlayer Pro(激活码还剩)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJ7-W1-oEd">
+                                    <rect key="frame" x="20" y="20" width="335" height="23"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byR-Pl-77C">
-                                    <rect key="frame" x="20" y="49" width="335" height="136"/>
+                                    <rect key="frame" x="20" y="63" width="335" height="136"/>
                                     <attributedString key="attributedText">
                                         <fragment content="EasyPlayer Pro专业版全功能播放器，是由EasyDarwin团队维护的一款支持RTSP、RTMP、HTTP、HLS等多种流媒体协议的播放器版本，更多详情邮件咨询：">
                                             <attributes>
@@ -70,7 +68,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="leB-Iq-P8U">
-                                    <rect key="frame" x="118" y="229" width="140" height="140"/>
+                                    <rect key="frame" x="117.5" y="243" width="140" height="140"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="140" id="4lN-lB-DRI"/>
                                         <constraint firstAttribute="height" constant="140" id="6T0-Nq-cIc"/>
@@ -82,11 +80,11 @@
                                 <constraint firstItem="leB-Iq-P8U" firstAttribute="top" secondItem="byR-Pl-77C" secondAttribute="bottom" constant="44" id="0fK-bd-30O"/>
                                 <constraint firstItem="qJ7-W1-oEd" firstAttribute="leading" secondItem="Z1C-5i-oXb" secondAttribute="leading" constant="20" id="IW9-q8-tHH"/>
                                 <constraint firstAttribute="trailing" secondItem="byR-Pl-77C" secondAttribute="trailing" constant="20" id="Kho-Nt-HgR"/>
-                                <constraint firstItem="qJ7-W1-oEd" firstAttribute="top" secondItem="Z1C-5i-oXb" secondAttribute="top" constant="8" id="V1f-X6-ayp"/>
+                                <constraint firstItem="qJ7-W1-oEd" firstAttribute="top" secondItem="Z1C-5i-oXb" secondAttribute="top" constant="20" id="V1f-X6-ayp"/>
                                 <constraint firstAttribute="trailing" secondItem="qJ7-W1-oEd" secondAttribute="trailing" constant="20" id="Wpk-Jx-act"/>
                                 <constraint firstItem="byR-Pl-77C" firstAttribute="leading" secondItem="Z1C-5i-oXb" secondAttribute="leading" constant="20" id="Xlp-NG-Xca"/>
                                 <constraint firstAttribute="bottom" secondItem="leB-Iq-P8U" secondAttribute="bottom" constant="298" id="eFN-lb-gAr"/>
-                                <constraint firstItem="byR-Pl-77C" firstAttribute="top" secondItem="qJ7-W1-oEd" secondAttribute="bottom" constant="10" id="jzq-CC-rl0"/>
+                                <constraint firstItem="byR-Pl-77C" firstAttribute="top" secondItem="qJ7-W1-oEd" secondAttribute="bottom" constant="20" id="jzq-CC-rl0"/>
                                 <constraint firstItem="leB-Iq-P8U" firstAttribute="centerX" secondItem="Z1C-5i-oXb" secondAttribute="centerX" id="nLk-Uy-vY1"/>
                             </constraints>
                         </view>
@@ -101,7 +99,7 @@
                     </constraints>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © www.EasyDarwin.org 2012-2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bg4-4e-HKv">
-                    <rect key="frame" x="28" y="626" width="318" height="21"/>
+                    <rect key="frame" x="28.5" y="626" width="318" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="OGg-hx-yhi"/>
                         <constraint firstAttribute="width" constant="318" id="nhe-L6-VFA"/>
