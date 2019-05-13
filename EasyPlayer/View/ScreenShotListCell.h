@@ -3,7 +3,7 @@
 //  BTG
 //
 //  Created by liyy on 2017/11/6.
-//  Copyright © 2017年 CCDC. All rights reserved.
+//  Copyright © 2017年 HRG. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

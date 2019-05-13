@@ -24,7 +24,6 @@ static const CGFloat MBDefaultPadding = 4.f;
 static const CGFloat MBDefaultLabelFontSize = 16.f;
 static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
-
 @interface MBProgressHUD () {
     // Deprecated
     UIColor *_activityIndicatorColor;

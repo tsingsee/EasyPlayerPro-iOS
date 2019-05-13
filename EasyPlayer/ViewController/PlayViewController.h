@@ -1,16 +1,16 @@
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 #import <VideoToolbox/VideoToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 #import <IJKMediaFramework/IJKMediaFramework.h>
 
-@interface PlayViewController : UIViewController
+/**
+ 视频播放
+ */
+@interface PlayViewController : BaseViewController
 
-@property (nonatomic, strong) NSString *urlStr;
-@property (nonatomic, strong) NSString *imagePath;
-
-@property (nonatomic, assign) BOOL isVideoSquare;
-@property (nonatomic, assign) BOOL isLocal;
+@property (nonatomic, strong) NSString *urlStr;// 视频源
+@property (nonatomic, assign) BOOL isLocal;// 是否播放本地视频
 
 @property (atomic, retain) id<IJKMediaPlayback> player;
 

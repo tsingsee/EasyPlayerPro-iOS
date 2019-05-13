@@ -97,10 +97,24 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error@2x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error@3x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success@2x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success@3x.png"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error@2x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_error@3x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success@2x.png"
+  install_resource "${PODS_ROOT}/WHToast/WHToast/wtoast_icon/whtoast_success@3x.png"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

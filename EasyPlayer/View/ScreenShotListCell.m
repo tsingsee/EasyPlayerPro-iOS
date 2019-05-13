@@ -3,14 +3,10 @@
 //  BTG
 //
 //  Created by liyy on 2017/11/6.
-//  Copyright © 2017年 CCDC. All rights reserved.
+//  Copyright © 2017年 HRG. All rights reserved.
 //
 
 #import "ScreenShotListCell.h"
-
-#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation ScreenShotListCell
 
@@ -33,17 +29,17 @@
  */
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.backgroundColor = [UIColor grayColor];
-        UIView *lineView = [[UIView alloc] init];
-        lineView.frame = CGRectMake(0, 180 - 5, SCREEN_WIDTH, 5);
-        lineView.backgroundColor = UIColorFromRGB(0xf2f2f2);
-        [self addSubview:lineView];
+        self.backgroundColor = [UIColor whiteColor];
+        
+//        UIView *lineView = [[UIView alloc] init];
+//        lineView.frame = CGRectMake(0, 180 - 5, HRGScreenWidth, 5);
+//        lineView.backgroundColor = UIColorFromRGB(0xf2f2f2);
+//        [self addSubview:lineView];
 
         _infoIV = [[UIImageView alloc] init];
         _infoIV.contentMode = UIViewContentModeScaleAspectFit;
-        _infoIV.frame = CGRectMake(0, 0, SCREEN_WIDTH, 180 - 5);
+        _infoIV.frame = CGRectMake(0, 0, HRGScreenWidth, 200);
         [self addSubview:_infoIV];
-
     }
     
     return self;

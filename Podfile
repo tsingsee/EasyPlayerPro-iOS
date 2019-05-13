@@ -9,5 +9,18 @@ target 'EasyPlayerPro' do
   pod 'AFNetworking'
   pod 'SDWebImage'
   pod 'MJRefresh'
+  
+  pod 'Masonry'
+  pod 'Bugly'
+  
+  pod 'RTRootNavigationController'
+  pod 'IQKeyboardManager'
+  pod 'YYKit'
+  
+  pod 'WHToast'
+#  pod 'LongImageCache'
+
+  #    pod 'ReactiveCocoa', '~> 2.5'
+  pod 'ReactiveCocoa', :git => 'https://github.com/zhao0/ReactiveCocoa.git', :tag => '2.5.2'
 
 end
