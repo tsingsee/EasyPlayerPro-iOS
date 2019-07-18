@@ -59,7 +59,7 @@ PlayViewController *pvc = nil;
     
     // 返回按钮
     _backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    _backBtn.frame = CGRectMake(0, HRGBarHeight, 44, 44);
+    _backBtn.frame = CGRectMake(0, EasyBarHeight, 44, 44);
     _backBtn.backgroundColor = [UIColor clearColor];
     _backBtn.showsTouchWhenHighlighted = YES;
     [_backBtn setBackgroundImage:[UIImage imageNamed:@"BackVideo"] forState:UIControlStateNormal];
@@ -86,7 +86,7 @@ PlayViewController *pvc = nil;
     [_webView loadData:gifData MIMEType:@"image/gif" textEncodingName:@"UTF-8" baseURL:[NSURL URLWithString:@""]];
     
     // bottomView
-    self.bottomViewFrame = CGRectMake(0, HRGScreenHeight - BottomViewHeight, HRGScreenWidth, BottomViewHeight);
+    self.bottomViewFrame = CGRectMake(0, EasyScreenHeight - BottomViewHeight, EasyScreenWidth, BottomViewHeight);
     self.bottomView = [[UIView alloc] initWithFrame:self.bottomViewFrame];
     self.bottomView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.bottomView];
@@ -428,15 +428,15 @@ PlayViewController *pvc = nil;
     if (!self.fullBtn.selected) {
         [UIView animateWithDuration:0.5 animations:^{
             self.view.transform = CGAffineTransformMakeRotation(M_PI_2);
-            self.view.bounds = CGRectMake(0, 0, HRGScreenHeight, HRGScreenWidth);
+            self.view.bounds = CGRectMake(0, 0, EasyScreenHeight, EasyScreenWidth);
             
             [[UIApplication sharedApplication] setStatusBarHidden:YES];
             self.statusBarHidden = NO;
             [self prefersStatusBarHidden];
             
-            self.backBtn.frame = CGRectMake(HRGBarHeight, self.backBtn.frame.origin.y, 44, 44);
+            self.backBtn.frame = CGRectMake(EasyBarHeight, self.backBtn.frame.origin.y, 44, 44);
             
-            self.bottomViewFrame = CGRectMake(0, HRGScreenWidth - BottomViewHeight, HRGScreenHeight, BottomViewHeight);
+            self.bottomViewFrame = CGRectMake(0, EasyScreenWidth - BottomViewHeight, EasyScreenHeight, BottomViewHeight);
             self.bottomView.frame = self.bottomViewFrame;
             self.bottomView.backgroundColor = UIColorFromRGBA(0x000000, 0.4);
             
@@ -447,7 +447,7 @@ PlayViewController *pvc = nil;
     } else {
         [UIView animateWithDuration:0.5 animations:^{
             self.view.transform = CGAffineTransformIdentity;
-            self.view.bounds = CGRectMake(0, 0, HRGScreenWidth, HRGScreenHeight);
+            self.view.bounds = CGRectMake(0, 0, EasyScreenWidth, EasyScreenHeight);
             
             [[UIApplication sharedApplication] setStatusBarHidden:NO];
             self.statusBarHidden = YES;
@@ -455,7 +455,7 @@ PlayViewController *pvc = nil;
             
             self.backBtn.frame = CGRectMake(0, self.backBtn.frame.origin.y, 44, 44);
             
-            self.bottomViewFrame = CGRectMake(0, HRGScreenHeight - BottomViewHeight, HRGScreenWidth, BottomViewHeight);
+            self.bottomViewFrame = CGRectMake(0, EasyScreenHeight - BottomViewHeight, EasyScreenWidth, BottomViewHeight);
             self.bottomView.frame = self.bottomViewFrame;
             self.bottomView.backgroundColor = [UIColor blackColor];
             

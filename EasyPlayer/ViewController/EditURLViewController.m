@@ -2,7 +2,7 @@
 //  EditURLViewController.m
 //  EasyPlayerRTMP
 //
-//  Created by liyy on 2019/4/25.
+//  Created by leo on 2019/4/25.
 //  Copyright © 2019年 cs. All rights reserved.
 //
 
@@ -35,10 +35,10 @@
     
     self.view.backgroundColor = UIColorFromRGBA(0x000000, 0.6);
     
-    self.contentViewWidth.constant = HRGScreenWidth;
-    self.contentViewHeight.constant = HRGScreenHeight;
+    self.contentViewWidth.constant = EasyScreenWidth;
+    self.contentViewHeight.constant = EasyScreenHeight;
     
-    HRGViewBorderRadius(self.contentView, 4, 0, [UIColor clearColor]);
+    EasyViewBorderRadius(self.contentView, 4, 0, [UIColor clearColor]);
     
     [self.scanBtn setImage:[UIImage imageNamed:@"scan"] forState:UIControlStateNormal];
     [self.scanBtn setImage:[UIImage imageNamed:@"scan_click"] forState:UIControlStateHighlighted];

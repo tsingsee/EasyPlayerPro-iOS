@@ -1,9 +1,9 @@
 //
 //  BrandShopCell.m
-//  BTG
+//  Easy
 //
-//  Created by liyy on 2017/11/6.
-//  Copyright © 2017年 HRG. All rights reserved.
+//  Created by leo on 2017/11/6.
+//  Copyright © 2017年 leo. All rights reserved.
 //
 
 #import "ScreenShotListCell.h"
@@ -32,13 +32,13 @@
         self.backgroundColor = [UIColor whiteColor];
         
 //        UIView *lineView = [[UIView alloc] init];
-//        lineView.frame = CGRectMake(0, 180 - 5, HRGScreenWidth, 5);
+//        lineView.frame = CGRectMake(0, 180 - 5, EasyScreenWidth, 5);
 //        lineView.backgroundColor = UIColorFromRGB(0xf2f2f2);
 //        [self addSubview:lineView];
 
         _infoIV = [[UIImageView alloc] init];
         _infoIV.contentMode = UIViewContentModeScaleAspectFit;
-        _infoIV.frame = CGRectMake(0, 0, HRGScreenWidth, 200);
+        _infoIV.frame = CGRectMake(0, 0, EasyScreenWidth, 200);
         [self addSubview:_infoIV];
     }
     

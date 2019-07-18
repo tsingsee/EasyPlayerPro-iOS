@@ -25,7 +25,7 @@
 		66DA4865227E76070090852C /* URLUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA485D227E76070090852C /* URLUnit.m */; };
 		66DA4866227E76070090852C /* URLModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA4860227E76070090852C /* URLModel.m */; };
 		66DA4867227E76070090852C /* NSUserDefaultsUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA4861227E76070090852C /* NSUserDefaultsUnit.m */; };
-		66DA4868227E76070090852C /* HRGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA4863227E76070090852C /* HRGBaseModel.m */; };
+		66DA4868227E76070090852C /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA4863227E76070090852C /* BaseModel.m */; };
 		66DA4870227E80500090852C /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA486A227E80500090852C /* AboutViewController.m */; };
 		66DA4871227E80500090852C /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA486C227E80500090852C /* WebViewController.m */; };
 		66DA4872227E80500090852C /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DA486F227E80500090852C /* SettingViewController.m */; };
@@ -96,12 +96,12 @@
 		66DA485B227E76070090852C /* URLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLModel.h; sourceTree = "<group>"; };
 		66DA485C227E76070090852C /* PathUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathUnit.m; sourceTree = "<group>"; };
 		66DA485D227E76070090852C /* URLUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLUnit.m; sourceTree = "<group>"; };
-		66DA485E227E76070090852C /* HRGBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRGBaseModel.h; sourceTree = "<group>"; };
+		66DA485E227E76070090852C /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
 		66DA485F227E76070090852C /* PathUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathUnit.h; sourceTree = "<group>"; };
 		66DA4860227E76070090852C /* URLModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLModel.m; sourceTree = "<group>"; };
 		66DA4861227E76070090852C /* NSUserDefaultsUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSUserDefaultsUnit.m; sourceTree = "<group>"; };
 		66DA4862227E76070090852C /* URLUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLUnit.h; sourceTree = "<group>"; };
-		66DA4863227E76070090852C /* HRGBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRGBaseModel.m; sourceTree = "<group>"; };
+		66DA4863227E76070090852C /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 		66DA486A227E80500090852C /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		66DA486B227E80500090852C /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		66DA486C227E80500090852C /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 		66DA4859227E76070090852C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				66DA485E227E76070090852C /* HRGBaseModel.h */,
-				66DA4863227E76070090852C /* HRGBaseModel.m */,
+				66DA485E227E76070090852C /* BaseModel.h */,
+				66DA4863227E76070090852C /* BaseModel.m */,
 				66DA485B227E76070090852C /* URLModel.h */,
 				66DA4860227E76070090852C /* URLModel.m */,
 				66DA4862227E76070090852C /* URLUnit.h */,
@@ -564,7 +564,7 @@
 				66DA4872227E80500090852C /* SettingViewController.m in Sources */,
 				6654D97F227F23CB00074145 /* RecordListCell.m in Sources */,
 				6654D982227F252F00074145 /* FileListViewController.m in Sources */,
-				66DA4868227E76070090852C /* HRGBaseModel.m in Sources */,
+				66DA4868227E76070090852C /* BaseModel.m in Sources */,
 				66DA4864227E76070090852C /* PathUnit.m in Sources */,
 				66DA4865227E76070090852C /* URLUnit.m in Sources */,
 			);
