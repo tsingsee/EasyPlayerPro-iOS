@@ -79,12 +79,12 @@
         return;
     }
     
-    // RTSP/RTMP/HTTP/HLS地址
-    if (![text hasPrefix:@"rtmp://"] ||![text hasPrefix:@"rtsp://"] ||
-        ![text hasPrefix:@"http://"] || ![text hasPrefix:@"hls://"]) {
-        [WHToast showMessage:@"请输入正确的流地址" duration:2 finishHandler:nil];
-        return;
-    }
+//    // RTSP/RTMP/HTTP/HLS地址
+//    if (![text hasPrefix:@"rtmp://"] ||![text hasPrefix:@"rtsp://"] ||
+//        ![text hasPrefix:@"http://"] || ![text hasPrefix:@"hls://"]) {
+//        [WHToast showMessage:@"请输入正确的流地址" duration:2 finishHandler:nil];
+//        return;
+//    }
     
     self.model.url = text;
     
