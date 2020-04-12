@@ -7,13 +7,12 @@ An elegant, simple, fast android RTSP/RTMP/HLS/HTTP Player.EasyPlayer support RT
 # 版本下载 #
 
 - EasyPlayerPro-Android
-https://fir.im/EasyPlayerPro
 
-![](http://www.easydarwin.org/github/EasyPlayerProAndroidDownload.png)
+![](http://www.easydarwin.org/github/images/app/2020/easy_player_pro_android.png)
 
 - EasyPlayerPro-iOS
 
-![](http://www.easydarwin.org/github/EasyPlayerProiOSDownload.png)
+![](http://www.easydarwin.org/github/images/app/2020/easy_player_pro_iOS.png)
 
 ## 技术支持 ##
 
