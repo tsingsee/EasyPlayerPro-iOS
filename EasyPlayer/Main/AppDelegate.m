@@ -32,7 +32,7 @@
         [URLUnit addURLModel:model3];
         
         URLModel *model1 = [[URLModel alloc] initDefault];
-        model1.url = @"rtmp://live.hkstv.hk.lxdns.com/live/hks2";
+        model1.url = @"http://112.17.40.12/PLTV/88888888/224/3221226758/1.m3u8";
         [URLUnit addURLModel:model1];
         
         [NSUserDefaultsUnit setUDP:NO];
